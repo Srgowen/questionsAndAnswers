@@ -34,7 +34,7 @@ const quizQuestions = [
 ];
 
 let currentQuestionIndex = 0;
-let timeRemaining = 6;
+let timeRemaining = 20;
 let timerInterval;
 let score = 0;
 
@@ -52,6 +52,11 @@ function startQuiz() {
         if (timeRemaining <= 0 || currentQuestionIndex === quizQuestions.length) {
             endQuiz();
         }
+
+        if (timeRemaining === 10) {
+            alert("This is a distraction! stay focused!");
+        }
+
     }, 1000);
 
     // Display the first question
@@ -108,7 +113,13 @@ function nextQuestion(event) {
     scoreElement.textContent = `Score: ${score}`;
 } 
 
+let endQuizCalled = false; //flag variable
+
 function endQuiz() {
+
+    if(!endQuizCalled) {
+        endQuizCalled = true;
+
     // Stop the timer
     clearInterval(timerInterval);
 
@@ -149,6 +160,9 @@ function endQuiz() {
     // Append the form to the highScoreContainer
     highScoreContainer.appendChild(form);
 }
+}
+
+
 
 
 // Add event listener for the start button
