@@ -6,14 +6,29 @@ const quizQuestions = [
         correctAnswer: "A programming language"
     },
     {
-        question: "What is Java?",
-        answers: ["D", "E", "F"],
-        correctAnswer: "D"
+        question: "what is a method in javascript?",
+        answers: ["A method in JavaScript is a standalone function that can be called on an object", "A method in JavaScript is a property of an object that is a function, allowing the object to perform actions or computations", "A method in JavaScript is a built-in function provided by the language for performing specific operations, such as string manipulation or mathematical calculations"],
+        correctAnswer: "A method in JavaScript is a property of an object that is a function, allowing the object to perform actions or computations"
     },
     {
-        question: "What is Script?",
-        answers: ["A", "B", "C"],
-        correctAnswer: "A"
+        question: "what is NOT example of a method?",
+        answers: ["toUpperCase()", "let x = 5;", "console.log()"],
+        correctAnswer: "let x = 5;"
+    },
+    {
+        question: "what is an object in javascript?",
+        answers: ["Data container with named properties", "Key-value pair data structure", "JavaScript's complex data structure"],
+        correctAnswer: "Key-value pair data structure"
+    },
+    {
+        question: "What is an example of an object in javascript?",
+        answers: ["Hello, world!", "42", "{ name: John, age: 30 }"],
+        correctAnswer: "{ name: John, age: 30 }"
+    },
+    {
+        question: "what do javascript libraries allow you to do?",
+        answers: ["Create standalone web applications", "Replace JavaScript with a different programming language", "Extend JavaScript's functionality and simplify coding tasks"],
+        correctAnswer: "Extend JavaScript's functionality and simplify coding tasks"
     },
     // Add more questions here
 ];
@@ -82,7 +97,7 @@ function nextQuestion(event) {
 
     currentQuestionIndex++;
     
-    if (currentQuestionIndex === quizQuestions.length) {
+    if (currentQuestionIndex === quizQuestions.length || timeRemaining === 0) {
         endQuiz();
     } else {
         displayQuestion(currentQuestionIndex);
