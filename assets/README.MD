@@ -13,7 +13,7 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone https://github.com/yourusername/javascript-quiz.git
+<git clone git@github.com:Srgowen/questionsAndAnswers.git>
 Navigate to the project directory:
 
 bash
@@ -39,3 +39,5 @@ Create your feature branch: git checkout -b feature/new-feature.
 Commit your changes: git commit -m 'Add a new feature'.
 Push to the branch: git push origin feature/new-feature.
 Submit a pull request.
+
+![image](https://github.com/Srgowen/questionsAndAnswers/assets/119532973/6f55d0b4-60f3-49ae-beef-90a3df23d4ee)
