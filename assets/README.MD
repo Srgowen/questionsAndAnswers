@@ -13,7 +13,7 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone git@github.com:Srgowen/questionsAndAnswers.git
+<git clone git@github.com:Srgowen/questionsAndAnswers.git>
 Navigate to the project directory:
 
 bash
