@@ -41,8 +41,6 @@ let score = 0;
 function startQuiz() {
     // Start the timer
 
-    // alert("alert!")
-
     document.getElementById("introduction").style.display = "none"
 
     timerInterval = setInterval(function() {
@@ -67,25 +65,36 @@ function displayQuestion(questionIndex) {
     // Display the question and answer choices
     const questionContainer = document.getElementById("quiz-container");
     const quizObject = quizQuestions[questionIndex];
-    questionContainer.textContent=""
-    // Populate the question and answer choices in the HTML
-    const h3 = document.createElement("h3")
-    h3.textContent = quizObject.question 
-    questionContainer.appendChild(h3)
-    const ul = document.createElement("ul")
-   for (let i = 0; i < quizObject.answers.length; i++) {
-    const li = document.createElement("li")
-    const button = document.createElement("button")
-    button.textContent = quizObject.answers[i]
-    button.addEventListener("click", nextQuestion)
-    li.appendChild(button)
-    ul.appendChild(li)
-   }
-questionContainer.appendChild(ul)
 
-    // Add event listeners to answer choices to check if the answer is correct
+    // Clear any existing content in the questionContainer
+    questionContainer.textContent = "";
 
+    // Create a heading element for the question text
+    const h3 = document.createElement("h3");
+    h3.textContent = quizObject.question;
+    questionContainer.appendChild(h3);
+
+    // Create an unordered list for the answer choices
+    const ul = document.createElement("ul");
+
+    // Loop through the answer choices in the quizObject
+    for (let i = 0; i < quizObject.answers.length; i++) {
+        const li = document.createElement("li"); // Create a list item for each answer
+
+        const button = document.createElement("button"); // Create a button for the answer choice
+        button.textContent = quizObject.answers[i]; // Set the button text to the answer choice
+
+        // Add a click event listener to the button to handle the user's response
+        button.addEventListener("click", nextQuestion);
+
+        li.appendChild(button); // Append the button to the list item
+        ul.appendChild(li); // Append the list item to the unordered list
+    }
+
+    // Append the question and answer choices to the questionContainer
+    questionContainer.appendChild(ul);
 }
+
 
 function nextQuestion(event) {
     const selectedAnswer = event.target.textContent;
